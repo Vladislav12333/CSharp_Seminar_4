@@ -3,9 +3,9 @@
 // 8 -> 10
 // 4 -> 36
 
-int ReadInt(string text)
+int ReadInt(string text) //функция которая будет выводить текст в какой-то терминал
 {
-    System.Console.Write(text);
+    System.Console.Write(text); //вывели некоторый текст
     return Convert.ToInt32(Console.ReadLine());
 }
 int SumNumbers(int A)
