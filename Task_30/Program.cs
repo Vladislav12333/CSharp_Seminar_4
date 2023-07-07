@@ -1,12 +1,30 @@
 ﻿// Задача 30. Напишите программу, которая выводит массив из 8 элементов, заполненный нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
-//Решение без использования функции
-int[] array = new int[8];
-Random rand = new Random();
-for (int i = 0; i < 8; i++)
+//Решение с использованием функции
+void FillArray(int[] arr)
 {
-    array[i] = rand.Next(0, 2);
+    Random rand = new Random();
+
+    for (int i = 0; i < arr.Length; i++) 
+    {
+        arr[i] = rand.Next(0, 2);
+    }
 }
 
-System.Console.WriteLine(string.Join(" ", array));
+void PrintArray(int[] arr)
+{
+    System.Console.WriteLine(string.Join(" ", arr));
+}
+
+int ReadInt(string text)
+{
+    System.Console.Write(text);
+    return Convert.ToInt32(Console.ReadLine());
+}
+//-------------------------------------------------
+
+int sizeArray = ReadInt("Введите размер массива: ");
+int[] array = new int[sizeArray];
+FillArray(array);
+PrintArray(array);
